@@ -1,5 +1,6 @@
 const button = document.querySelector('#submit');
 const todoList = document.querySelector('#todo-list');
+const todoNr = document.querySelector('.todo-nr b');
 const items = todoList.children;
 
 // Add event listener to element and run an anonymous function
@@ -10,6 +11,10 @@ button.addEventListener('click', function () {
     todoList.appendChild(newItem);
 })
 
+todoNr.innerText = items.length;
+
+// todoNr.innerText = items.length;
+// console.log(todoNr);
 // We can also created an external function and reference it in the eventlistner
 
 // button.addEventListener('click', addItem);
