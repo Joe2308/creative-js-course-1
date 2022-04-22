@@ -1,17 +1,18 @@
 const button = document.querySelector('#submit');
 const todoList = document.querySelector('#todo-list');
-const todoNr = document.querySelector('.todo-nr b');
+const todoNum = document.querySelector('.todo-nr');
+const mainTitle = document.querySelector('.main-title');
 const items = todoList.children;
 
 // Add event listener to element and run an anonymous function
-button.addEventListener('click', function () {
-    const newItem = document.createElement('li');
-    newItem.classList.add('item');
-    newItem.innerText = 'Item 3';
-    todoList.appendChild(newItem);
-})
+// button.addEventListener('click', function () {
+//     const newItem = document.createElement('li');
+//     newItem.classList.add('item');
+//     newItem.innerText = `Item ${items.length +1} `;
+//     todoList.appendChild(newItem);
+//     todoNum.innerText = items.length;
+// })
 
-todoNr.innerText = items.length;
 
 // todoNr.innerText = items.length;
 // console.log(todoNr);
@@ -22,3 +23,10 @@ todoNr.innerText = items.length;
 // function addItem() {
 //     console.log('newer item added');
 // }
+
+
+button.addEventListener('keydown', function (e) {
+    if (e.keyCode === 81) {
+        mainTitle.classList.toggle('change');
+    }
+})
